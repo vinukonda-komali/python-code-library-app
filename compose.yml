@@ -1,0 +1,37 @@
+---
+services:
+  db:
+    image: dbimage
+    ports:
+      - "3306:3306"
+    deploy:
+      replicas: 4
+
+  auth_service:
+    image: authimage
+    ports:
+      - "5001:5001"
+    deploy:
+      replicas: 4
+
+  book_service:
+    image: bookimage
+    ports:
+      - "5002:5002"
+    deploy:
+      replicas: 4
+
+  borrow_service:
+    image: borrowimage
+    ports:
+      - "5003:5003"
+    deploy:
+      replicas: 4
+
+  frontend:
+    image: appimage
+     ports:
+      - "5000:5000"
+    deploy:
+      replicas: 4
+-- INSERT --                                                                                                       1,4           Top
